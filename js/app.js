@@ -2,7 +2,7 @@
 $(document).ready(function () {
     // $('body').fadeIn(1000); // Плавная загрузка
     // Прелоадер
-    $('.loader-container').fadeOut(5000);
+    $('.loader-container').fadeOut(4000);
 
     // Меню бургер
     $('.header__burger').click(function () {

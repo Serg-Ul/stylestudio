@@ -93,6 +93,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .loader {
+    -webkit-animation: loader 4s ease 1;
     animation: loader 4s ease 1;
 }
 
@@ -101,6 +102,7 @@ h1, h2, h3, h4, h5, h6 {
 
     }
     100% {
+        -webkit-transform: rotateY(360deg);
         transform: rotateY(360deg);
     }
 }
@@ -303,10 +305,69 @@ body.lock {
 }
 
 /* main часть */
+/* Создание логотипов */
+.create-logo {
+    padding: 100px 0 100px 0;
+}
+
+.container-create {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.create__container {
+    display: flex;
+}
+
+.create__container-item {
+    flex: 0 0 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.create__title {
+    width: 27ch;
+    font-size: 40px;
+    color: black;
+    border-right: grey;
+    font-style: italic;
+    border-right: 4px solid grey;
+    white-space: nowrap;
+    animation: flashing-border 1s step-end infinite,
+    printed-text 5s steps(30);
+}
+
+@keyframes flashing-border {
+    0% {
+        border-color: grey;
+    }
+    50% {
+        border-color: transparent;
+    }
+    100% {
+        border-color: grey;
+    }
+}
+@keyframes printed-text {
+    0%{
+        width: 0;
+    }
+}
+.create__text {
+    color: black;
+    font-size: 20px;
+    letter-spacing: 2px;
+    line-height: 30px;
+}
+
+/* Создание логотипов */
+
+
 .slider__container {
-    padding: 100px 0 20px 50px;
+    padding: 50px 0 20px 50px;
     background-color: rgba(160, 160, 160, 0.7);
-    background-attachment: fixed;
 }
 
 @media screen and (max-width: 550px) {
@@ -321,11 +382,13 @@ body.lock {
     font-size: 30px;
     font-style: italic;
 }
-@media screen and (max-width: 400px){
-    .slider__title{
+
+@media screen and (max-width: 400px) {
+    .slider__title {
         font-size: 25px;
     }
 }
+
 .container-item {
     max-width: 1200px;
     margin: 0 auto;
@@ -395,12 +458,12 @@ body.lock {
 /* Конкретный слайдер */
 .slider {
     position: relative;
-    padding: 0px 60px;
+    padding: 0 60px;
 }
 
 @media (max-width: 767px) {
     .slider {
-        padding: 0px 40px;
+        padding: 0 40px;
     }
 }
 
@@ -472,3 +535,4 @@ body.lock {
 .slider .slick-list {
     cursor: pointer;
 }
+
