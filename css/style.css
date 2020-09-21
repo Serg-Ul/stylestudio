@@ -23,7 +23,7 @@ nav, footer, header, aside {
 }
 
 html, body {
-    height: 100%;
+    min-height: 100%;
     width: 100%;
     font-size: 100%;
     line-height: 1;
@@ -85,6 +85,8 @@ h1, h2, h3, h4, h5, h6 {
     height: 100vh;
     width: 100%;
     position: fixed;
+    left: 0;
+    bottom: 0;
     background-color: white;
     display: flex;
     justify-content: center;
@@ -93,7 +95,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .loader {
-    -webkit-animation: loader 4s ease 1;
     animation: loader 4s ease 1;
 }
 
@@ -102,10 +103,10 @@ h1, h2, h3, h4, h5, h6 {
 
     }
     100% {
-        -webkit-transform: rotateY(360deg);
         transform: rotateY(360deg);
     }
 }
+
 
 /* Прелоадер */
 
@@ -311,7 +312,7 @@ body.lock {
 }
 
 .container-create {
-    max-width: 1400px;
+    max-width: 1430px;
     margin: 0 auto;
     padding: 0 10px;
 }
@@ -321,22 +322,23 @@ body.lock {
 }
 
 .create__container-item {
-    flex: 0 0 50%;
+    flex: 1 1 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 0 10px;
 }
 
 .create__title {
-    width: 27ch;
+    width: 28ch;
+    overflow: hidden;
     font-size: 40px;
     color: black;
-    border-right: grey;
     font-style: italic;
-    border-right: 4px solid grey;
     white-space: nowrap;
-    animation: flashing-border 1s step-end infinite,
-    printed-text 5s steps(30);
+    border-right: 4px solid grey;
+    animation: printed-text 6s steps(28) 1s,
+    flashing-border 0.75s step-start infinite;
 }
 
 @keyframes flashing-border {
@@ -350,11 +352,13 @@ body.lock {
         border-color: grey;
     }
 }
+
 @keyframes printed-text {
-    0%{
+    from {
         width: 0;
     }
 }
+
 .create__text {
     color: black;
     font-size: 20px;
@@ -362,11 +366,56 @@ body.lock {
     line-height: 30px;
 }
 
+.create__container-item-two {
+    margin: 0 0 0 30px;
+    flex: 0 1 40%;
+}
+
+.create__image {
+    max-width: 100%;
+}
+
+@media screen and (max-width: 950px) {
+    .create-logo{
+        padding: 100px 0 50px 0;
+    }
+    .create__container {
+        flex-direction: column;
+        padding: 0 0 0 20px;
+    }
+
+    .create__image {
+        width: 80%;
+    }
+    .create__container-item{
+        padding: 0 10px 0 30px;
+    }
+    .create__title{
+        font-size: 28px;
+    }
+    .create__container-item-two{
+        flex: 0 1 30%;
+        padding: 30px 0 0 0;
+    }
+}
+@media screen and (max-width: 450px){
+    .create__container-item{
+        padding: 0 10px 0 3px;
+    }
+    .create__title{
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .create__text{
+        font-size: 17px;
+    }
+}
+
 /* Создание логотипов */
 
 
 .slider__container {
-    padding: 50px 0 20px 50px;
+    padding: 50px 0 20px 0;
     background-color: rgba(160, 160, 160, 0.7);
 }
 
@@ -375,7 +424,11 @@ body.lock {
         padding: 100px 30px 20px 30px;
     }
 }
-
+@media screen and (max-width: 500px){
+    .slider__container{
+        padding: 50px 30px 20px 30px;
+    }
+}
 .slider__title {
     text-align: center;
     color: grey;
