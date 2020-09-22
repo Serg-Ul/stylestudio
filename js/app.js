@@ -1,6 +1,10 @@
 $(document).ready(function () {
     // $('body').fadeIn(1000); // Плавная загрузка
     // Прелоадер
+    $('body').addClass('scroll-hidden');
+    setTimeout(function () {
+        $('body').removeClass('scroll-hidden');
+    },2400);
     $('.loader-container').fadeOut(4000);
 
     // Меню бургер
@@ -46,11 +50,11 @@ $(document).ready(function () {
 $(window).on('scroll', function () {
     if ($(window).scrollTop() >= 150) {
         $('.btn-top').fadeIn(500);
-    }else{
+    } else {
         $('.btn-top').fadeOut(500);
     }
 });
 $('.btn-top').click(function () {
-    $('html,body').animate({scrollTop:0},500);
+    $('html,body').animate({scrollTop: 0}, 500);
 });
 
