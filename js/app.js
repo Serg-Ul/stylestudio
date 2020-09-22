@@ -9,7 +9,7 @@ $(document).ready(function () {
         $('body').toggleClass('lock')
     });
 
-   // Слайдер
+    // Слайдер
     $('.slider').slick({
         arrows: false,
         dots: true,
@@ -43,3 +43,14 @@ $(document).ready(function () {
         ]
     });
 });
+$(window).on('scroll', function () {
+    if ($(window).scrollTop() >= 150) {
+        $('.btn-top').fadeIn(500);
+    }else{
+        $('.btn-top').fadeOut(500);
+    }
+});
+$('.btn-top').click(function () {
+    $('html,body').animate({scrollTop:0},500);
+});
+
