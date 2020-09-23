@@ -11,7 +11,9 @@
 <body>
 <div class="wrapper">
     <div class="loader-container">
-        <img class="loader" src="img/icons/logo.png" alt="">
+        <div class="loader">
+            <div class="loader__item"></div>
+        </div>
     </div>
     <button class="btn-top">
         <div class="triangle"></div>
@@ -91,5 +93,16 @@
 <script src="js/slick.min.js"></script>
 
 <script src="js/app.js"></script>
+
+<script> $(window).on('scroll', function () {
+    if ($(window).scrollTop() >= 150) {
+        $('.btn-top').fadeIn(500);
+    } else {
+        $('.btn-top').fadeOut(500);
+    }
+});
+$('.btn-top').click(function () {
+    $('html,body').animate({scrollTop: 0}, 500);
+});</script>
 </body>
 </html>

@@ -76,19 +76,18 @@ h1, h2, h3, h4, h5, h6 {
     display: none;
 } */
 /* Плавная загрузка */
+
 .wrapper {
-    overflow: hidden;
+    overflow: auto;
 }
 
 /* Прелоадер */
-body.scroll-hidden{
-    position: fixed;
-    width: 100%;
-}
 .loader-container {
     height: 100vh;
     width: 100%;
     position: fixed;
+    top: 0;
+    right: 0;
     left: 0;
     bottom: 0;
     background-color: white;
@@ -99,22 +98,43 @@ body.scroll-hidden{
 }
 
 .loader {
-    animation: loader 4s ease 1;
+    width: 100px;
+    height: 100px;
+    border: 3px solid grey;
+    border-top-color: transparent;
+    animation: loader 4s ease-in-out 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader__item {
+    width: 50px;
+    height: 50px;
+    border: 3px solid grey;
+    border-bottom-color: transparent;
+    animation: loader-item 4s ease-in-out 1;
 }
 
 @keyframes loader {
     0% {
-
     }
     100% {
-        transform: rotateY(360deg);
+        transform: rotate(360deg);
     }
 }
 
+@keyframes loader-item {
+    0% {
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
 /* Прелоадер */
 /* Кнопка вверх */
-.btn-top{
+.btn-top {
     display: none;
     position: fixed;
     right: 30px;
@@ -127,9 +147,11 @@ body.scroll-hidden{
     padding: 15px 15px;
     opacity: 1;
 }
-.btn-top:hover{
+
+.btn-top:hover {
     opacity: 0.6;
 }
+
 .triangle {
     width: 0;
     height: 0;
@@ -137,6 +159,7 @@ body.scroll-hidden{
     border-right: 5px solid transparent;
     border-bottom: 10px solid white;
 }
+
 /* Кнопка вверх */
 /* header,меню */
 body.lock {
@@ -404,9 +427,10 @@ body.lock {
 }
 
 @media screen and (max-width: 950px) {
-    .create-logo{
+    .create-logo {
         padding: 100px 0 50px 0;
     }
+
     .create__container {
         flex-direction: column;
         padding: 0 0 0 20px;
@@ -415,26 +439,32 @@ body.lock {
     .create__image {
         width: 80%;
     }
-    .create__container-item{
+
+    .create__container-item {
         padding: 0 10px 0 30px;
     }
-    .create__title{
+
+    .create__title {
         font-size: 28px;
     }
-    .create__container-item-two{
+
+    .create__container-item-two {
         flex: 0 1 30%;
         padding: 30px 0 0 0;
     }
 }
-@media screen and (max-width: 450px){
-    .create__container-item{
+
+@media screen and (max-width: 450px) {
+    .create__container-item {
         padding: 0 10px 0 3px;
     }
-    .create__title{
+
+    .create__title {
         font-size: 20px;
         font-weight: 700;
     }
-    .create__text{
+
+    .create__text {
         font-size: 17px;
     }
 }
@@ -452,11 +482,13 @@ body.lock {
         padding: 100px 30px 20px 30px;
     }
 }
-@media screen and (max-width: 500px){
-    .slider__container{
+
+@media screen and (max-width: 500px) {
+    .slider__container {
         padding: 50px 35px 20px 30px;
     }
 }
+
 .slider__title {
     text-align: center;
     color: grey;
