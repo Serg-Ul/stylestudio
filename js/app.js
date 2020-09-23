@@ -1,9 +1,15 @@
 $(document).ready(function () {
     // $('body').fadeIn(1000); // Плавная загрузка
     // Прелоадер
-    $(window).on('load', function () {
-        $('.loader-container').delay(1000).fadeOut(1000);
-    });
+    setTimeout(function () {
+        if ($('.loader-container').length) {
+            let $loader_container = $('.loader-container');
+            let $loader = $('.loader-container').find('loader');
+            $loader.fadeOut();
+            $loader_container.delay(1000).fadeOut(1000);
+
+        }
+    }, 1000);
     // Прелоадер
 
     // Меню бургер
