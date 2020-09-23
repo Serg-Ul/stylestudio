@@ -1,15 +1,11 @@
 $(document).ready(function () {
     // $('body').fadeIn(1000); // Плавная загрузка
     // Прелоадер
-    setTimeout(function () {
-        if ($('.loader-container').length) {
-            let $loader_container = $('.loader-container');
-            let $loader = $('.loader-container').find('loader');
-            $loader.fadeOut();
-            $loader_container.delay(1000).fadeOut(1000);
-
-        }
-    }, 1000);
+    $(".wrapper").css("min-height", $(window).height());
+    $(window).on('load',function () {
+        $(".loader").fadeOut(1000);
+        $(".loader-container").delay(600).fadeOut('slow');
+    });
     // Прелоадер
 
     // Меню бургер
