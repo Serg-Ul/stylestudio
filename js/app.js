@@ -1,10 +1,8 @@
 $(document).ready(function () {
     // $('body').fadeIn(1000); // Плавная загрузка
     // Прелоадер
-    $(".wrapper").css("min-height", $(window).height());
     $(window).on('load',function () {
-        $(".loader").fadeOut(1000);
-        $(".loader-container").delay(600).fadeOut('slow');
+        $('.loader-container').fadeOut(2000);
     });
     // Прелоадер
 
