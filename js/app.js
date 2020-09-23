@@ -1,11 +1,10 @@
+$(window).on('load', function () {
+    $('.loader-container').fadeOut(2000);
+});
 $(document).ready(function () {
     // $('body').fadeIn(1000); // Плавная загрузка
     // Прелоадер
-    $(window).on('load', function () {
-        setTimeout(() => {
-            $('.loader-container').css('display','none');
-        }, 3000)
-    });
+
     // Прелоадер
 
     // Меню бургер
